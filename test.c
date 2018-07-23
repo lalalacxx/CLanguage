@@ -9,13 +9,22 @@ int main()
     int right = strlen(arr1)-1;
     printf("%s\n",arr2);
     //while循环实现
-    while(left <= right)
+   // while(left <= right)
+   // {
+   //     sleep(1);
+   //     arr2[left] = arr1[left];
+   //     arr2[right] = arr1[right];
+   //     left++;
+   //     right--;
+   //     printf("%s\n",arr2);
+   // }
+   
+   //for循环实现
+    for(left = 0,right = strlen(arr1)-1;left <= right;left++,right--)
     {
         sleep(1);
         arr2[left] = arr1[left];
         arr2[right] = arr1[right];
-        left++;
-        right--;
         printf("%s\n",arr2);
     }
     return 0;
