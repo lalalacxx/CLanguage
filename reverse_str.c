@@ -37,8 +37,6 @@ void reverse_str(char arr[],int sz)
 int main()
 {
     char arr[] = "student a am i";
-    printf("请输入你想要翻转的字符串：");
-    gets(arr);
     int sz = sizeof(arr)/sizeof(arr[0])-1;
     reverse_str(arr,sz);
     printf("%s\n",arr);
