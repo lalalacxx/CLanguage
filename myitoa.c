@@ -49,10 +49,6 @@ int main()
 {
     int a = 123;
     int b = -123;
-    char *res1 = myitoa(a);
-    char *res2 = myitoa(b);
-    printf("123->%s\n",res1);
-    printf("-123->%s\n",res2);
     printf("123->%s\n",myitoa(a));
     printf("-123->%s\n",myitoa(b));
     return 0;
