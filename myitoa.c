@@ -28,19 +28,18 @@ char *myitoa(int num)
         num = -num;//先将其转化为正数
         flag = -1;//记录该数原本应该是一个负数
     }
-    do
+    while(num > 0)
     {
         s[i++] = num%10+'0';
         num = num/10;
     }
-    while(num > 0);
     if(flag == -1)
     {
         s[i++] = '-';//加上负号
     }
     s[i] = '\0';//加上字符串的'\0'
-    //加入要转化的数字是-123，则走到这一不已经转化为321-
-    //此时再将321-逆置就可以了
+    //假如要转化的数字是-123，则走到这一步已经转化为"321-"
+    //此时再将"321-"逆置就可得到"-123"
     char *res = reverse(s);
     return res;
 }
@@ -49,7 +48,9 @@ int main()
 {
     int a = 123;
     int b = -123;
-    printf("123->%s\n",myitoa(a));
-    printf("-123->%s\n",myitoa(b));
+    char *s1 = myitoa(a);
+    printf("123->%s\n",s1);
+    char *s2 = myitoa(b);
+    printf("-123->%s\n",s2);
     return 0;
 }
