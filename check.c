@@ -4,16 +4,16 @@ int check1()
     int i = 1;
     return (*(char)&i);
 }
-//int check2()
-//{
-//    union
-//    {
-//        int i;
-//        char c;
-//    }un;
-//    un.i = 1;
-//    return un.c;
-//}
+int check2()
+{
+    union
+    {
+        int i;
+        char c;
+    }un;
+    un.i = 1;
+    return un.c;
+}
 int main()
 {
     int res = check1();
