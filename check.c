@@ -2,7 +2,7 @@
 int check1()
 {
     int i = 1;
-    return (*(char)&i);
+    return (*(char*)&i);
 }
 int check2()
 {
