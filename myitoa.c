@@ -5,7 +5,6 @@
 char *reverse(char *s)
 {
     assert(s);
-//    char *str = s;
     char *head = s;
     char *tail = s;
     while(*tail != '\0')
@@ -17,9 +16,9 @@ char *reverse(char *s)
         *head++ = *tail;
         *tail-- = tmp;
     }
-    //s = str;
     return s;
 }
+
 char *myitoa(int num,char *s)
 {
     int i = 0;
