@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include<assert.h>
-
+#include<string.h>
 //模拟实现strlen 求字符串长度
 int my_strlen1(const char *str)
 {
@@ -51,15 +51,11 @@ char *my_strcat(char *dst,const char *src)
     assert(src);
     char *ret = dst;
     //先找到dst的'\0'
-    while(*dst++)
-        ;
-    //再把src的内容一一赋值给dst'\0'往后
-    while(*dst && *src)
-    {
-        *dst = *src;
-        src++;
+    while(*dst)
         dst++;
-    }
+    //再把src的内容一一赋值给dst'\0'往后
+    while((*dst++ = *src++))
+        ;
     return ret;
 }
 
