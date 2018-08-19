@@ -5,9 +5,9 @@
 char *reverse(char *s)
 {
     assert(s);
-    char *str = s;
-    char *head = str;
-    char *tail = str;
+//    char *str = s;
+    char *head = s;
+    char *tail = s;
     while(*tail != '\0')
         tail++;//此时tail已经走到了'\0'的位置
     tail--;//因此循环结束以后经tail往后移动一个
@@ -17,7 +17,7 @@ char *reverse(char *s)
         *head++ = *tail;
         *tail-- = tmp;
     }
-    s = str;
+    //s = str;
     return s;
 }
 char *myitoa(int num,char *s)
