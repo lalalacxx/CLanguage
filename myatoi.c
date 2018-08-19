@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include<assert.h>
 #include<ctype.h>
+#include<stdlib.h>
 int myatoi(const char *str)
 {
     assert(str);
@@ -9,9 +10,9 @@ int myatoi(const char *str)
     char *p = (char *)str;
     while(*p != '\0')
     {
-        if(*p == ' ')
+        while(*p == ' ')
             p++;//跳过空格
-        else if(*p == '-')
+        if(*p == '-')
         {
             p++;
             sign = -1;//负数
@@ -38,10 +39,12 @@ int main()
     char str3[] = "abc";
     char str4[] = "123abc";
     char str5[] = "12abc3";
+    char str6[] = "  12abc3";
     printf("123->%d\n",myatoi(str1));
     printf("-123->%d\n",myatoi(str2));
     printf("abc->%d\n",myatoi(str3));
     printf("123abc->%d\n",myatoi(str4));
     printf("12abc3->%d\n",myatoi(str5));
+    printf("  123abc3->%d\n",myatoi(str6));
     return 0;
 }
